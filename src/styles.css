@@ -1,3 +1,125 @@
-body {
-    background-color: rebeccapurple;
+:root {
+  --boxShadow: 3px 3px 4px rgba(0, 0, 0, 0.291);
+  --textShadow: 3px 3px 2px rgba(0, 0, 0, 0.479);
+  /* --mainColor: rgb(4, 76, 4); */
+  --mainColor: rgb(174, 115, 7);
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 400 to 700 */
+.caveat-font {
+  font-family: "Caveat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+.roboto-font {
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}  
+
+* {
+  font-family: "Roboto", Calibri, Tahoma, sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 4.5rem 3rem 3rem 4.5rem;
+}
+
+.topBGcolor {
+  height: 360px;
+  width: 3000px;
+  background-color: var(--mainColor);
+  clip-path: polygon(0 0, 100% 0, 100% 15%, 0% 100%);
+  z-index: -1;
+  position: absolute;
+  top: -3rem; left: 0;
+  box-shadow: var(--boxShadow);
+}
+
+.aboutMeDiv {
+  background-color: white;
+  box-shadow: var(--boxShadow);
+  padding: 2rem 2rem;
+  height: fit-content;
+  /* display: flex;
+  flex-direction: column;
+  row-gap: 1rem; */
+}
+
+.aboutMeImageAndName {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: -10rem;
+  margin-bottom: -3.5rem;
+  position: relative;
+  top: -3.5rem; left: -3.5rem;
+}
+
+.aboutMeImageAndName h1 {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 9rem;
+  color: white;
+  text-shadow: var(--textShadow);
+}
+
+.profilePic {
+  /* height: 280px;
+  width: 280px; */
+  height: 280px;
+  width: 70%;
+  object-fit: cover;
+  object-position: 40% bottom;
+  /* position: relative; */
+  /* top: -2rem; left: -2rem; */
+  /* float: left;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
+  position: relative;
+  top: -2rem; left: -2rem; */
+  filter: drop-shadow(var(--boxShadow));
+}
+
+h1 {
+  font-family: "Caveat", serif;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: "Caveat", serif;
+  font-size: 2rem;
+}
+
+.aboutMeDiv p {
+  font-size: 0.75rem;
+  line-height: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.socialMediaIcons {
+  height: 1.25rem;
+  text-align: right;
+}
+
+.socialMediaIcons img {
+  height: 100%;
+  /* display: inline; */
+  /* margin-left: 14px; */
+}
+
+.projectGrid {
+  display: flex;
 }
