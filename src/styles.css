@@ -1,12 +1,10 @@
 :root {
-  --boxShadow: 3px 3px 4px rgba(0, 0, 0, 0.291);
-  --textShadow: 3px 3px 2px rgba(0, 0, 0, 0.479);
-  /* --mainColor: rgb(4, 76, 4); */
-  --mainColor: rgb(174, 115, 7);
+  --boxShadow: 2px 2px 10px rgba(0, 0, 0, 0.291);
+  --textShadow: 3px 3px 5px rgba(0, 0, 0, 0.479);
+  /* --mainColor: rgb(174, 115, 7); */
+  --mainColor: rgb(199, 147, 51);
 }
 
-/* <uniquifier>: Use a unique and descriptive class name
-<weight>: Use a value from 400 to 700 */
 .caveat-font {
   font-family: "Caveat", serif;
   font-optical-sizing: auto;
@@ -14,8 +12,6 @@
   font-style: normal;
 }
 
-/* <uniquifier>: Use a unique and descriptive class name
-<weight>: Use a value from 100 to 900 */
 .roboto-font {
   font-family: "Roboto", serif;
   font-optical-sizing: auto;
@@ -30,66 +26,10 @@
   margin: 0;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  padding: 4.5rem 3rem 3rem 4.5rem;
-}
-
-.topBGcolor {
-  height: 360px;
-  width: 3000px;
-  background-color: var(--mainColor);
-  clip-path: polygon(0 0, 100% 0, 100% 15%, 0% 100%);
-  z-index: -1;
-  position: absolute;
-  top: -3rem; left: 0;
-  box-shadow: var(--boxShadow);
-}
-
-.aboutMeDiv {
-  background-color: white;
-  box-shadow: var(--boxShadow);
-  padding: 2rem 2rem;
-  height: fit-content;
-  /* display: flex;
-  flex-direction: column;
-  row-gap: 1rem; */
-}
-
-.aboutMeImageAndName {
-  position: relative;
-  overflow: hidden;
-  float: left;
-  margin-right: -10rem;
-  margin-bottom: -3.5rem;
-  position: relative;
-  top: -3.5rem; left: -3.5rem;
-}
-
-.aboutMeImageAndName h1 {
-  position: absolute;
-  bottom: 0.4rem;
-  right: 9rem;
-  color: white;
-  text-shadow: var(--textShadow);
-}
-
-.profilePic {
-  /* height: 280px;
-  width: 280px; */
-  height: 280px;
-  width: 70%;
-  object-fit: cover;
-  object-position: 40% bottom;
-  /* position: relative; */
-  /* top: -2rem; left: -2rem; */
-  /* float: left;
-  margin-right: -1rem;
-  margin-bottom: -1rem;
-  position: relative;
-  top: -2rem; left: -2rem; */
-  filter: drop-shadow(var(--boxShadow));
+body {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -102,7 +42,63 @@ h2 {
   font-size: 2rem;
 }
 
-.aboutMeDiv p {
+h3 {
+  font-family: "Caveat", serif;
+  font-size: 1rem;
+}
+
+/* HEADER --------------------------------------------------- */
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 4.5rem 3rem 0 4.5rem;
+}
+
+.headerBGcolor {
+  height: 360px;
+  width: 100%;
+  background-color: var(--mainColor);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+  z-index: -1;
+  position: absolute;
+  top: -3rem; left: 0;
+}
+
+.aboutMeDiv {
+  background-color: rgba(255, 255, 255, 0.686);
+  box-shadow: var(--boxShadow);
+  padding: 2rem 2rem;
+  height: fit-content;
+}
+
+.aboutMeImageAndName {
+  max-width: 340px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: -2rem;
+  margin-bottom: -3.5rem;
+  top: -3.5rem; left: -3.5rem;
+  filter: drop-shadow(var(--boxShadow));
+}
+
+.aboutMeImageAndName h1 {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 1rem;
+  color: white;
+  text-shadow: var(--textShadow);
+}
+
+.profilePic {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 40% bottom;
+}
+
+.aboutMeText p {
   font-size: 0.75rem;
   line-height: 1.3rem;
   margin-top: 1rem;
@@ -116,10 +112,168 @@ h2 {
 
 .socialMediaIcons img {
   height: 100%;
-  /* display: inline; */
-  /* margin-left: 14px; */
+  margin-left: 0.5rem;
 }
 
 .projectGrid {
   display: flex;
+}
+
+/* MAIN --------------------------------------------------- */
+
+main {
+  padding: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 0.75rem;
+}
+
+.projectTile {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr 2fr;
+  height: 320px;
+  min-width: 160px;
+  flex-grow: 1;
+  box-shadow: var(--boxShadow);
+}
+
+.projectScreenshot {
+  background-color: rgb(34, 154, 128);
+  color: white;
+}
+
+.projectNameAndLinks {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 0.5rem 1rem 0 1rem;
+}
+
+.projectNameAndLinks h3 {
+}
+
+.projectLinks {
+  justify-self: end;
+}
+
+.projectLinks img {
+  height: 1.15rem;
+  margin-left: 0.25rem;
+}
+
+.projectDesc {
+  font-size: 0.625rem;
+  padding: 0.5rem 1rem 0 1rem;
+}
+
+/* FOOTER --------------------------------------------------- */
+
+.footerBGcolor {
+  height: 280px;
+  width: 100%;
+  background-color: var(--mainColor);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+}
+
+.contactMe {
+  display: grid;
+  grid-auto-flow: row;
+  font-size: 0.75rem;
+  width: 100%;
+  height: fit-content;
+  gap: 1rem;
+}
+
+.contactIcons {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  align-items: start;
+}
+
+.contactIcons img {
+  height: 1.15rem;
+  margin-right: 0.5rem;
+  position: relative;
+  bottom: 3px;
+}
+
+.contactMe > .socialMediaIcons {
+  text-align: left;
+  position: relative;
+  left: -8px;
+}
+
+.contactMePicDiv {
+  filter: drop-shadow(var(--boxShadow));
+  display: flex;
+  align-items: flex-end;
+}
+
+.contactMePic {
+  height: calc(100% + 3.5rem);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  object-fit: cover;
+}
+
+/* MEDIA --------------------------------------------------- */
+
+@media (max-width: 500px) {
+  .headerBGcolor {
+    height: 260px;
+  }
+  
+  header {
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .aboutMeDiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .aboutMeImageAndName {
+    margin: 0;
+    top: 0; left: 0;
+    display: grid;
+    justify-self: center;
+    top: -1rem;
+  }
+
+  .profilePic {
+    height: 100%;
+    min-width: 110%;
+  }
+
+  .socialMediaIcons {
+    height: 1.75rem;
+    text-align: center;
+  }
+
+  main {
+    padding: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .footerContent {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
 }
